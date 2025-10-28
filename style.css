@@ -1,0 +1,60 @@
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f9fc;
+  --accent:#0066ff;
+  --muted:#6b7280;
+  --container:1100px;
+}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.6;color:#111;background:var(--bg)}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #e6edf5;position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.site-title{font-size:1.25rem}
+.nav ul{list-style:none;display:flex;gap:1rem}
+.nav a{color:var(--muted);text-decoration:none;padding:.5rem .25rem;border-radius:4px}
+.nav a:hover{color:var(--accent)}
+.nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem}
+
+/* Hero */
+.hero{padding:4rem 0;background:linear-gradient(180deg,#eaf2ff 0%, #fff 100%);}
+.hero-content{padding:2rem 0}
+.hero .lead{margin:1rem 0;color:var(--muted);max-width:60ch}
+.cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+
+/* Sections */
+.about,.skills,.contact{padding:3rem 0}
+h2{font-size:1.5rem;margin-bottom:.75rem}
+.skill-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.5rem;margin-top:.75rem}
+.skill-list li{background:#fff;padding:.5rem .75rem;border-radius:6px;border:1px solid #e6edf5;color:var(--muted)}
+
+.site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .nav ul{display:none;flex-direction:column;background:#fff;position:absolute;right:1rem;top:64px;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,.08)}
+  .nav.open ul{display:flex}
+  .nav-toggle{display:inline-block}
+  .header-inner{align-items:center}
+}
+
+/* Resume styles */
+.resume-grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start}
+.contact-info{background:#fff;padding:1rem;border-radius:8px;border:1px solid #e6edf5}
+.contact-info h2{margin-bottom:.25rem}
+.contact-info p{color:var(--muted);margin-bottom:1rem}
+.resume-skills{list-style:none;padding-left:0}
+.resume-skills li{padding:.35rem 0;border-bottom:1px dashed #eef4fb;color:var(--muted);font-size:.95rem}
+.resume-main h2{margin-top:0}
+.job{background:#fff;padding:1rem;border-radius:8px;border:1px solid #e6edf5;margin-bottom:1rem}
+.job h3{margin-bottom:.25rem}
+.job .meta{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+.job ul{margin-left:1rem}
+.education p{background:#fff;padding:1rem;border-radius:8px;border:1px solid #e6edf5}
+
+@media (max-width:900px){
+  .resume-grid{grid-template-columns:1fr}
+  .contact-info{order:0}
+}

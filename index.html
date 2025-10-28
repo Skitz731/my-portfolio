@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sean Duke — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <h1 class="site-title">Sean Duke</h1>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content container">
+        <h2>Welcome!</h2>
+  <p class="lead">Hi — I'm <strong>Sean Duke</strong>, a data scientist who loves turning data into insight. This is a simple portfolio starter page. Replace the text with your own bio.</p>
+        <a class="cta" href="#about">Learn more</a>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>About Me</h2>
+      <p>I’m a data scientist focused on extracting actionable insights from data. I work with datasets of all sizes to build models, create visualizations, and communicate results to stakeholders. Replace this paragraph with a short personal bio that highlights your experience and interests.</p>
+    </section>
+
+    <section id="skills" class="skills container">
+      <h2>Skills</h2>
+      <p>Here are some of my data science skills:</p>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>scikit-learn</li>
+        <li>TensorFlow &amp; PyTorch</li>
+        <li>SQL</li>
+        <li>Data visualization (Matplotlib, Seaborn, Plotly)</li>
+        <li>Statistical analysis</li>
+        <li>Machine learning &amp; feature engineering</li>
+        <li>Natural Language Processing (NLP)</li>
+      </ul>
+    </section>
+
+    <section id="resume" class="resume container">
+      <div class="resume-grid">
+        <aside class="contact-info">
+          <h2>Sean Duke</h2>
+          <p>
+            Rolling Meadows, IL 60008<br>
+            <a href="tel:+18477729265">(847) 772-9265</a><br>
+            <a href="mailto:Seanyd42@proton.me">Seanyd42@proton.me</a>
+          </p>
+
+          <h3>Skills</h3>
+          <ul class="resume-skills">
+            <li>High level knowledge of Microsoft Office and Google Suite</li>
+            <li>Excellent problem-solving IT issues for Windows, Mac, and Linux systems</li>
+            <li>Great troubleshooting skills</li>
+            <li>Basic hardware repair skills</li>
+            <li>Great teacher of technical processes</li>
+          </ul>
+        </aside>
+
+        <div class="resume-main">
+          <h2>Experience</h2>
+
+          <div class="job">
+            <h3>Account Executive — Imagetec</h3>
+            <p class="meta">Rosemont, IL — July 2025 to Present</p>
+            <ul>
+              <li>Consult with small to medium businesses about ways to optimize workflows with new office technology</li>
+              <li>Lead business development to grow customer base within assigned territory</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Account Manager — SEEL</h3>
+            <p class="meta">Detroit, MI — November 2022 to February 2025</p>
+            <ul>
+              <li>Completed quality assurance audits for retail energy efficiency program</li>
+              <li>Maintained relationships with stores and brands</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Sales Manager / Lead Sales Associate / Lessons Manager — Guitar Center</h3>
+            <p class="meta">Arlington Heights, IL &amp; Syracuse, NY — May 2022 to November 2022 (Sales Manager); July 2020 to May 2022 (Lead Sales Associate); March 2019 to July 2025 (Lessons Manager); Nov 2018 to March 2019 (Sales Associate)</p>
+            <ul>
+              <li>Generated sales by leading larger sales team of 15 people</li>
+              <li>Educated and trained in all aspects of the job including technical support for software, knowledge of products, and troubleshooting best practices</li>
+              <li>Oversaw all operations when general manager was away and handled customer service issues, payment disputes, purchase approvals, payroll, and scheduling</li>
+              <li>Set standard for sales team by hitting sales targets and assisted customers with larger scale pro audio needs</li>
+              <li>Troubleshot customer equipment/computers and managed lesson scheduling and instructor availability</li>
+            </ul>
+          </div>
+
+          <h2>Education</h2>
+          <div class="education">
+            <p><strong>Fayetteville-Manlius High School</strong>, Manlius, NY — Diploma, June 2018</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact</h2>
+      <p>Replace with your contact info or links to social / email.</p>
+    </section>
+  </main>
+
+    <footer class="site-footer container">
+    <p>&copy; <span id="year">2025</span> Sean Duke. <a href="#contact">Contact</a></p>
+  </footer>
+
+  <script>
+    // Small script to toggle mobile nav
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    btn && btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
