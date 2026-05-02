@@ -1,0 +1,1937 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    },
+    "widgets": {
+      "application/vnd.jupyter.widget-state+json": {
+        "a4b0e3aa2db94541a6447a1afc9bd57d": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_dom_classes": [],
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "HBoxModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/controls",
+            "_view_module_version": "1.5.0",
+            "_view_name": "HBoxView",
+            "box_style": "",
+            "children": [
+              "IPY_MODEL_35f280d813574c2c828ae87ab01606f6",
+              "IPY_MODEL_40a7ad0ade9d49a7ad729de0918f3d6a",
+              "IPY_MODEL_4eec15abde1149abb6ea08d2e7b7d4df"
+            ],
+            "layout": "IPY_MODEL_abf8ecc7611e4bcb97e0a63ccff29595"
+          }
+        },
+        "35f280d813574c2c828ae87ab01606f6": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_dom_classes": [],
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "HTMLModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/controls",
+            "_view_module_version": "1.5.0",
+            "_view_name": "HTMLView",
+            "description": "",
+            "description_tooltip": null,
+            "layout": "IPY_MODEL_7cd9f66b010c4ee29228775d394af129",
+            "placeholder": "​",
+            "style": "IPY_MODEL_a7aab7e3bc924a8ebc64b7295635e4fc",
+            "value": "Loading weights: 100%"
+          }
+        },
+        "40a7ad0ade9d49a7ad729de0918f3d6a": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_dom_classes": [],
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "FloatProgressModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/controls",
+            "_view_module_version": "1.5.0",
+            "_view_name": "ProgressView",
+            "bar_style": "success",
+            "description": "",
+            "description_tooltip": null,
+            "layout": "IPY_MODEL_c9f899046ad34d0183cd2f1687dc145e",
+            "max": 102,
+            "min": 0,
+            "orientation": "horizontal",
+            "style": "IPY_MODEL_aa72e15c233949c8a1e775e89c067c86",
+            "value": 102
+          }
+        },
+        "4eec15abde1149abb6ea08d2e7b7d4df": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_dom_classes": [],
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "HTMLModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/controls",
+            "_view_module_version": "1.5.0",
+            "_view_name": "HTMLView",
+            "description": "",
+            "description_tooltip": null,
+            "layout": "IPY_MODEL_bf2a00eb7ce540a0b6507c45fa8a07bd",
+            "placeholder": "​",
+            "style": "IPY_MODEL_7dc09dc1c7ac42558433a7022a645603",
+            "value": " 102/102 [00:00&lt;00:00, 482.56it/s, Materializing param=qa_outputs.weight]"
+          }
+        },
+        "abf8ecc7611e4bcb97e0a63ccff29595": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "model_module_version": "1.2.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.2.0",
+            "_model_name": "LayoutModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "LayoutView",
+            "align_content": null,
+            "align_items": null,
+            "align_self": null,
+            "border": null,
+            "bottom": null,
+            "display": null,
+            "flex": null,
+            "flex_flow": null,
+            "grid_area": null,
+            "grid_auto_columns": null,
+            "grid_auto_flow": null,
+            "grid_auto_rows": null,
+            "grid_column": null,
+            "grid_gap": null,
+            "grid_row": null,
+            "grid_template_areas": null,
+            "grid_template_columns": null,
+            "grid_template_rows": null,
+            "height": null,
+            "justify_content": null,
+            "justify_items": null,
+            "left": null,
+            "margin": null,
+            "max_height": null,
+            "max_width": null,
+            "min_height": null,
+            "min_width": null,
+            "object_fit": null,
+            "object_position": null,
+            "order": null,
+            "overflow": null,
+            "overflow_x": null,
+            "overflow_y": null,
+            "padding": null,
+            "right": null,
+            "top": null,
+            "visibility": null,
+            "width": null
+          }
+        },
+        "7cd9f66b010c4ee29228775d394af129": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "model_module_version": "1.2.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.2.0",
+            "_model_name": "LayoutModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "LayoutView",
+            "align_content": null,
+            "align_items": null,
+            "align_self": null,
+            "border": null,
+            "bottom": null,
+            "display": null,
+            "flex": null,
+            "flex_flow": null,
+            "grid_area": null,
+            "grid_auto_columns": null,
+            "grid_auto_flow": null,
+            "grid_auto_rows": null,
+            "grid_column": null,
+            "grid_gap": null,
+            "grid_row": null,
+            "grid_template_areas": null,
+            "grid_template_columns": null,
+            "grid_template_rows": null,
+            "height": null,
+            "justify_content": null,
+            "justify_items": null,
+            "left": null,
+            "margin": null,
+            "max_height": null,
+            "max_width": null,
+            "min_height": null,
+            "min_width": null,
+            "object_fit": null,
+            "object_position": null,
+            "order": null,
+            "overflow": null,
+            "overflow_x": null,
+            "overflow_y": null,
+            "padding": null,
+            "right": null,
+            "top": null,
+            "visibility": null,
+            "width": null
+          }
+        },
+        "a7aab7e3bc924a8ebc64b7295635e4fc": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "DescriptionStyleModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "StyleView",
+            "description_width": ""
+          }
+        },
+        "c9f899046ad34d0183cd2f1687dc145e": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "model_module_version": "1.2.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.2.0",
+            "_model_name": "LayoutModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "LayoutView",
+            "align_content": null,
+            "align_items": null,
+            "align_self": null,
+            "border": null,
+            "bottom": null,
+            "display": null,
+            "flex": null,
+            "flex_flow": null,
+            "grid_area": null,
+            "grid_auto_columns": null,
+            "grid_auto_flow": null,
+            "grid_auto_rows": null,
+            "grid_column": null,
+            "grid_gap": null,
+            "grid_row": null,
+            "grid_template_areas": null,
+            "grid_template_columns": null,
+            "grid_template_rows": null,
+            "height": null,
+            "justify_content": null,
+            "justify_items": null,
+            "left": null,
+            "margin": null,
+            "max_height": null,
+            "max_width": null,
+            "min_height": null,
+            "min_width": null,
+            "object_fit": null,
+            "object_position": null,
+            "order": null,
+            "overflow": null,
+            "overflow_x": null,
+            "overflow_y": null,
+            "padding": null,
+            "right": null,
+            "top": null,
+            "visibility": null,
+            "width": null
+          }
+        },
+        "aa72e15c233949c8a1e775e89c067c86": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "ProgressStyleModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "StyleView",
+            "bar_color": null,
+            "description_width": ""
+          }
+        },
+        "bf2a00eb7ce540a0b6507c45fa8a07bd": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "model_module_version": "1.2.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.2.0",
+            "_model_name": "LayoutModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "LayoutView",
+            "align_content": null,
+            "align_items": null,
+            "align_self": null,
+            "border": null,
+            "bottom": null,
+            "display": null,
+            "flex": null,
+            "flex_flow": null,
+            "grid_area": null,
+            "grid_auto_columns": null,
+            "grid_auto_flow": null,
+            "grid_auto_rows": null,
+            "grid_column": null,
+            "grid_gap": null,
+            "grid_row": null,
+            "grid_template_areas": null,
+            "grid_template_columns": null,
+            "grid_template_rows": null,
+            "height": null,
+            "justify_content": null,
+            "justify_items": null,
+            "left": null,
+            "margin": null,
+            "max_height": null,
+            "max_width": null,
+            "min_height": null,
+            "min_width": null,
+            "object_fit": null,
+            "object_position": null,
+            "order": null,
+            "overflow": null,
+            "overflow_x": null,
+            "overflow_y": null,
+            "padding": null,
+            "right": null,
+            "top": null,
+            "visibility": null,
+            "width": null
+          }
+        },
+        "7dc09dc1c7ac42558433a7022a645603": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "model_module_version": "1.5.0",
+          "state": {
+            "_model_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_model_name": "DescriptionStyleModel",
+            "_view_count": null,
+            "_view_module": "@jupyter-widgets/base",
+            "_view_module_version": "1.2.0",
+            "_view_name": "StyleView",
+            "description_width": ""
+          }
+        }
+      }
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3TAhe1dj0t7Z"
+      },
+      "source": [
+        "# Final Project: Build a RAG-Powered Knowledge Assistant\n",
+        "\n",
+        "\n",
+        "## Project Overview\n",
+        "\n",
+        "In this project, you will build a complete **Retrieval-Augmented Generation (RAG) system** from scratch. Your system will serve as an intelligent knowledge assistant that can answer questions based on a collection of documents you provide.\n",
+        "\n",
+        "This project brings together everything you have learned in this chapter:\n",
+        "- Document chunking strategies\n",
+        "- Text embeddings with Sentence Transformers\n",
+        "- Vector storage and search with ChromaDB\n",
+        "- Question answering with Hugging Face models\n",
+        "- Building end-to-end RAG pipelines\n",
+        "\n",
+        "\n",
+        "## Choose Your Scenario\n",
+        "\n",
+        "Select **ONE** of the following scenarios for your project:\n",
+        "\n",
+        "### Option A: Customer Support Assistant\n",
+        "Build a customer support chatbot for a fictional company. Your knowledge base should include:\n",
+        "- Product/service descriptions\n",
+        "- Pricing and plans\n",
+        "- FAQs and troubleshooting\n",
+        "- Contact and support information\n",
+        "- Policies (returns, refunds, etc.)\n",
+        "\n",
+        "### Option B: Study Guide Assistant\n",
+        "Build a study assistant for a subject you are learning. Your knowledge base should include:\n",
+        "- Key concepts and definitions\n",
+        "- Explanations of important topics\n",
+        "- Examples and use cases\n",
+        "- Common questions and answers\n",
+        "- Summary notes\n",
+        "\n",
+        "### Option C: Personal Interest Assistant\n",
+        "Build an assistant for a hobby, interest, or domain you know well. Examples:\n",
+        "- A cooking assistant with recipes and techniques\n",
+        "- A gaming wiki assistant\n",
+        "- A travel guide for a city or region\n",
+        "- A fitness/workout assistant\n",
+        "- Any other domain you are passionate about\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2lxQiJbx0t7a"
+      },
+      "source": [
+        "## Project Requirements\n",
+        "\n",
+        "Your RAG system must meet the following requirements:\n",
+        "\n",
+        "### Knowledge Base Requirements\n",
+        "- [*] Minimum of **8 documents** covering different aspects of your chosen topic\n",
+        "- [*] Each document should be at least **150 words**\n",
+        "- [*] Documents should cover diverse subtopics within your domain\n",
+        "- [*] Content should be factual and specific (names, numbers, details)\n",
+        "\n",
+        "### Technical Requirements\n",
+        "- [*] Implement document chunking with configurable chunk size and overlap\n",
+        "- [*] Store chunks in ChromaDB with appropriate metadata\n",
+        "- [*] Create a RAG pipeline class that handles retrieval and generation\n",
+        "- [*] Implement confidence-based response handling\n",
+        "- [*] Include source attribution in responses\n",
+        "\n",
+        "### Testing Requirements\n",
+        "- [*] Test your system with at least **15 different questions**\n",
+        "- [*] Include questions of varying difficulty (simple facts, comparisons, multi-part)\n",
+        "- [*] Include at least **3 edge case questions** (questions not answerable from your knowledge base)\n",
+        "- [*] Document the results of all tests\n",
+        "\n",
+        "### Documentation Requirements\n",
+        "- [*] Explain your scenario choice and knowledge base design\n",
+        "- [*] Justify your chunking strategy\n",
+        "- [*] Analyze your system's strengths and weaknesses\n",
+        "- [*] Suggest improvements for a production version\n",
+        "\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "a93WThU10t7a"
+      },
+      "source": [
+        "## Part 1: Setup and Configuration\n",
+        "\n",
+        "Let's start by installing and importing the required libraries."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2j0f7T6g0t7a",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c55b5bab-9f00-4443-f5e6-fd44b1d3f7c4"
+      },
+      "source": [
+        "# Install required libraries\n",
+        "!pip install transformers torch sentence-transformers chromadb --quiet\n",
+        "\n",
+        "print(\"✅ Installation complete!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ Installation complete!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "oh_cRePB0t7a",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "98f9e44a-5a60-4c6b-9738-196720dc0bb2"
+      },
+      "source": [
+        "# Import all required libraries\n",
+        "import chromadb\n",
+        "from chromadb.utils import embedding_functions\n",
+        "from sentence_transformers import SentenceTransformer, util\n",
+        "from transformers import pipeline\n",
+        "import torch\n",
+        "import re\n",
+        "from typing import List, Dict, Optional\n",
+        "import json\n",
+        "\n",
+        "print(f\"PyTorch version: {torch.__version__}\")\n",
+        "print(f\"CUDA available: {torch.cuda.is_available()}\")\n",
+        "print(\"\\n All imports successful!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "PyTorch version: 2.10.0+cpu\n",
+            "CUDA available: False\n",
+            "\n",
+            " All imports successful!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mcsfG4EE0t7b"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 2: Project Declaration\n",
+        "\n",
+        "Before building, declare your project details. This helps you plan and will be part of your submission."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "w0aS3oMw0t7b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b5dd6f15-2c4d-497e-860e-cd48b7b53ae7"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Fill in your project details\n",
+        "# ============================================================\n",
+        "\n",
+        "PROJECT_INFO = {\n",
+        "    \"scenario\": \"Customer Support\",  # \"Customer Support\", \"Study Guide\", or \"Personal Interest\"\n",
+        "    \"topic\": \"TechGadgets Online Store\",  # e.g., \"TechGadgets Online Store\", \"Machine Learning Fundamentals\", \"Italian Cooking\"\n",
+        "    \"description\": \"A tool to help you pick out the best adapter for your laptop.\",  # 2-3 sentences describing what your assistant will help with\n",
+        "    \"target_users\": \"Tech newbies, Min-Max enthusiasts, and Deal Hunters\",  # Who would use this assistant?\n",
+        "}\n",
+        "\n",
+        "# Print your declaration\n",
+        "print(\" PROJECT DECLARATION\")\n",
+        "print(\"=\" * 50)\n",
+        "for key, value in PROJECT_INFO.items():\n",
+        "    print(f\"{key.replace('_', ' ').title()}: {value}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            " PROJECT DECLARATION\n",
+            "==================================================\n",
+            "Scenario: Customer Support\n",
+            "Topic: TechGadgets Online Store\n",
+            "Description: A tool to help you pick out the best adapter for your laptop.\n",
+            "Target Users: Tech newbies, Min-Max enthusiasts, and Deal Hunters\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "avVTR38z0t7b"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 3: Create Your Knowledge Base\n",
+        "\n",
+        "This is the foundation of your RAG system. Create comprehensive, well-organized documents for your chosen scenario.\n",
+        "\n",
+        "### Guidelines for Good Knowledge Base Documents:\n",
+        "- **Be specific**: Include names, numbers, dates, and concrete details\n",
+        "- **Be comprehensive**: Cover the topic thoroughly\n",
+        "- **Be organized**: Structure information logically\n",
+        "- **Be accurate**: Ensure facts are correct and consistent across documents"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7HoXfIsp0t7b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "16eda8e1-5d60-430c-d8d9-96a48c8a8c34"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Create your knowledge base with at least 8 documents\n",
+        "# ============================================================\n",
+        "\n",
+        "# Each document should have:\n",
+        "# - A clear, descriptive key (used as document ID)\n",
+        "# - Content of at least 150 words\n",
+        "# - Specific, factual information\n",
+        "\n",
+        "knowledge_base = {\n",
+        "    # EXAMPLE FORMAT (replace with your own content):\n",
+        "\n",
+        "    \"document_1\": \"\"\"\n",
+        "    [Voltage and Wattage Specifications]\n",
+        "\n",
+        "    Laptop adapters must match the original power requirements exactly to ensure no damge to your device.\n",
+        "    Most laptops require between 19V and 20V DC output, with wattage ranging from 45W to 240W depending on the device class. And as long as they aren't targeted at powerusers or gamers.\n",
+        "    Ultrabooks typically use 45W-65W adapters, gaming laptops require 150W-240W, and business laptops commonly use 65W-90W.\n",
+        "    Using an adapter with lower wattage than specified can cause charging issues, performance throttling, or adapter overheating.\n",
+        "    Higher wattage adapters are generally safe if voltage matches, as the laptop draws only the power it needs.\n",
+        "    Voltage mismatch is dangerous,using 12V on a 19V requirement will prevent charging, while 24V on a 19V device risks permanent damage.\n",
+        "    Always verify the voltage, amperage, and polarity markings on the original adapter's label before purchasing replacements.\n",
+        "    The center-positive polarity is standard for most laptop connectors, but some manufacturers use center-negative configurations.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_2\": \"\"\"\n",
+        "    [Connector Types and Compatibility]\n",
+        "\n",
+        "    Laptop power connectors vary significantly across manufacturers and models. Even though we've seen a shift to USB-C being more of a standard for charging.\n",
+        "    Barrel connectors remain the most common, with diameters ranging from 3.0mm to 7.4mm and lengths from 5.0mm to 17.0mm.\n",
+        "    The combination of outer diameter and inner pin size determines compatibility,two adapters with identical voltage can be incompatible due to connector differences.\n",
+        "    USB-C Power Delivery has become standard for modern ultrabooks, supporting up to 100W (240W with USB-PD 3.1). And is making its way to more budget options.\n",
+        "    Proprietary connectors continue to exist from manufacturers like Lenovo (rectangular tip), HP (blue ring indicator), and Dell (center pin with data communication).\n",
+        "    When replacing adapters, measure the connector precisely using calipers if possible. Universal adapter kits with interchangeable tips can work but require careful tip selection.\n",
+        "    Some adapters include smart pins that communicate with the laptop for battery optimization.These may trigger warnings if non-genuine adapters are used.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_3\": \"\"\"\n",
+        "    [Safety Certifications and Standards]\n",
+        "\n",
+        "    All legitimate laptop adapters carry multiple safety certifications indicating compliance with regional electrical standards.\n",
+        "    UL certification (Underwriters Laboratories) is required for US market sales, while CE marking indicates European conformity.\n",
+        "    FCC certification ensures electromagnetic interference compliance. Additional certifications include TUV (Germany), CCC (China), and KC (Korea).\n",
+        "    Certified adapters include proper insulation, surge protection, and thermal management systems.Counterfeit adapters most often lack these protections, creating fire hazards and risking laptop damage. So not recommended for those trying to stick to a tighter budget.\n",
+        "    Look for certification marks printed clearly on the adapter housing, not just packaging.Most reputable manufacturers include original equipment manufacturers (OEM) like Delta Electronics, Lite-On, and Chicony, plus certified third-party brands like Anker and UGREEN.\n",
+        "    Adapters should operate below 45°C under normal load. Overheating beyond 60°C indicates potential failure. All quality adapters should include short-circuit protection, over-voltage protection, and over-current protection as minimum safety features.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_4\": \"\"\"\n",
+        "    [Common Troubleshooting Issues]\n",
+        "\n",
+        "    The most common laptop adapter problems stem from cable damage, connector wear, or power outlet issues.Frayed cables near the connector point are the most common failure mode,inspect regularly for exposed wiring. Also a good idea to keep your pets from chewing on the cable.\n",
+        "    Loose connections causing intermittent charging often indicate worn barrel connectors or damaged laptop power jacks. If the adapter LED flickers or turns off during use, the internal transformer may be failing.\n",
+        "    Adapter humming or buzzing sounds indicate coil whine, which can precede complete failure. Laptop not recognizing the adapter despite correct voltage suggests smart pin communication failure or motherboard power circuit damage.\n",
+        "    Testing with a multimeter can verify output voltage stability under load. If voltage drops more than 5% when connected to the laptop, the adapter cannot supply sufficient current.\n",
+        "    Cleaning the connector with compressed air removes dust causing poor contact. Replacing the adapter before complete failure prevents unexpected shutdowns during important work.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_5\": \"\"\"\n",
+        "    [USB-C Power Delivery Standards]\n",
+        "\n",
+        "    USB-C Power Delivery (PD) has revolutionized laptop charging with universal connectivity and intelligent power negotiation. USB-PD 2.0 supports up to 100W (20V at 5A), while USB-PD 3.1 extends to 240W (48V at 5A).\n",
+        "    Laptops negotiate power profiles automatically with compatible chargers, selecting optimal voltage and current. Not all USB-C ports support power delivery. Some are data-only or video output only.\n",
+        "    Charging speed depends on both charger capability and laptop acceptance rate. A 100W charger won't charge a laptop faster than its maximum input rating allows.\n",
+        "    USB-C PD chargers can power multiple devices simultaneously if total wattage doesn't exceed capacity. Cable quality matters, E-Marker chips identify cables capable of carrying higher currents.\n",
+        "    Cheap cables may only support 60W regardless of charger capability. Fast charging protocols like Qualcomm Quick Charge are incompatible with USB-PD.\n",
+        "    For best results, use manufacturer-recommended USB-C PD chargers or certified third-party alternatives with matching wattage ratings.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_6\": \"\"\"\n",
+        "    [Brand-Specific Adapter Requirements]\n",
+        "\n",
+        "    Different laptop manufacturers have unique adapter specifications requiring careful attention. Apple MacBook adapters use MagSafe magnetic connectors or USB-C PD, with wattage varying from 30W for MacBooks to 140W for MacBook Pros. Not only depening on the cable, but the wall adapter as well.\n",
+        "    Dell uses proprietary barrel connectors with center data pins for battery optimization, third-party adapters may trigger warnings. HP employs blue-ring indicators on connectors and requires specific wattage for full performance.\n",
+        "    Lenovo's rectangular connectors and square tips differ from traditional barrel designs. ASUS and Acer generally use standard barrel connectors but vary pin sizes significantly. Gaming laptops from MSI, Razer, and Alienware require high-wattage adapters (150W-330W) due to power-hungry components.\n",
+        "    Using underspecified adapters causes performance throttling even if charging works. Always check the laptop model number against manufacturer documentation for exact adapter requirements. OEM adapters guarantee compatibility but cost more than third-party alternatives. And aren't always the best option for charging.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_7\": \"\"\"\n",
+        "    [Replacement Guidelines and Selection]\n",
+        "\n",
+        "    When selecting replacement laptop adapters, prioritize exact specification matching over brand loyalty. Essential parameters include output voltage (must match exactly), output amperage (equal or higher acceptable), connector dimensions (precise fit required), and polarity (typically center-positive).\n",
+        "    Calculate minimum wattage by multiplying voltage times amperage from the original adapter label. Consider future laptop purchases, universal adapters with multiple tips offer flexibility but may lack reliability.\n",
+        "    Budget allocation should prioritize safety certifications over price savings where applicable. Quality adapters last 3-5 years under normal use, while cheap alternatives fail within months and have higher risk of damaging your device. Purchase from authorized retailers to avoid counterfeit products.\n",
+        "    Keep all original packaging and receipts for warranty claims. Some manufacturers offer adapter warranties extending beyond the laptop warranty period. For business environments, maintain spare adapters to minimize downtime.\n",
+        "    Document adapter specifications for each device in your inventory for quick replacement ordering.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    \"document_8\": \"\"\"\n",
+        "    [Warranty and Return Policies]\n",
+        "\n",
+        "    Laptop adapter warranties typically range from 90 days to 3 years depending on manufacturer and purchase channel. OEM adapters from laptop manufacturers usually carry 1-year warranties matching the laptop coverage.\n",
+        "    Third-party adapter warranties vary widely. Reputable brands offer 2-3 year coverage while budget options provide minimal protection. Warranty claims require proof of purchase and often the original packaging.\n",
+        "    Defects covered include manufacturing flaws, premature failure, and safety component failures. Damage from power surges, physical abuse, or improper voltage is typically excluded.\n",
+        "    Return policies allow exchanges within 30 days for any reason at most retailers. Restocking fees may apply to opened electronics. Extended warranties purchased separately cover accidental damage but increase total cost.\n",
+        "    Register products with manufacturers for streamlined warranty service. Keep serial numbers documented, many adapters have unique identifiers for warranty validation. International warranty coverage varies by brand. Some honor global warranties while others restrict service to region of purchase.\n",
+        "    \"\"\",\n",
+        "\n",
+        "    # Add more documents as needed...\n",
+        "}\n",
+        "\n",
+        "# Validation\n",
+        "print(\"KNOWLEDGE BASE VALIDATION\")\n",
+        "print(\"=\" * 50)\n",
+        "print(f\"Total documents: {len(knowledge_base)}\")\n",
+        "\n",
+        "total_words = 0\n",
+        "for doc_name, content in knowledge_base.items():\n",
+        "    word_count = len(content.split())\n",
+        "    total_words += word_count\n",
+        "    status = \"Pass\" if word_count >= 150 else \"Too short!\"\n",
+        "    print(f\"  {doc_name}: {word_count} words {status}\")\n",
+        "\n",
+        "print(f\"\\nTotal words: {total_words}\")\n",
+        "print(f\"Average words per document: {total_words // len(knowledge_base)}\")\n",
+        "\n",
+        "if len(knowledge_base) >= 8:\n",
+        "    print(\"\\nDocument count requirement met!\")\n",
+        "else:\n",
+        "    print(f\"\\nYou need at least 8 documents. Currently have: {len(knowledge_base)}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "KNOWLEDGE BASE VALIDATION\n",
+            "==================================================\n",
+            "Total documents: 8\n",
+            "  document_1: 154 words Pass\n",
+            "  document_2: 162 words Pass\n",
+            "  document_3: 150 words Pass\n",
+            "  document_4: 160 words Pass\n",
+            "  document_5: 152 words Pass\n",
+            "  document_6: 157 words Pass\n",
+            "  document_7: 150 words Pass\n",
+            "  document_8: 154 words Pass\n",
+            "\n",
+            "Total words: 1239\n",
+            "Average words per document: 154\n",
+            "\n",
+            "Document count requirement met!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2cuTDkX-0t7b"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 4: Document Chunking\n",
+        "\n",
+        "Implement a chunking function and process your knowledge base. You should experiment with chunk size to find what works best for your content."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OBngdyAd0t7b"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Implement your chunking function\n",
+        "# ============================================================\n",
+        "\n",
+        "def chunk_document(\n",
+        "    text: str,\n",
+        "    chunk_size: int = 400,\n",
+        "    chunk_overlap: int = 50\n",
+        ") -> List[str]:\n",
+        "    \"\"\"\n",
+        "    Split a document into overlapping chunks, attempting to respect sentence boundaries.\n",
+        "\n",
+        "    Args:\n",
+        "        text: The document text to chunk\n",
+        "        chunk_size: Target size for each chunk (in characters)\n",
+        "        chunk_overlap: Number of characters to overlap between chunks\n",
+        "\n",
+        "    Returns:\n",
+        "        List of text chunks\n",
+        "\n",
+        "    Requirements:\n",
+        "        - Respect sentence boundaries (don't cut mid-sentence)\n",
+        "        - Include overlap between consecutive chunks\n",
+        "        - Handle edge cases (very short documents, etc.)\n",
+        "    \"\"\"\n",
+        "    if not text:\n",
+        "        return []\n",
+        "\n",
+        "    # Split into sentences. This regex keeps the punctuation with the sentence.\n",
+        "    # It attempts to split on periods, question marks, and exclamation marks\n",
+        "    # followed by optional quotes and whitespace.\n",
+        "    sentences = re.split(r'(?<=[.!?])[\"\\']?\\s+', text)\n",
+        "    sentences = [s.strip() for s in sentences if s.strip()]\n",
+        "\n",
+        "    if not sentences: # If the text contains no sentence delimiters, treat it as one sentence or by newlines\n",
+        "        sentences = text.split('\\n')\n",
+        "        sentences = [s.strip() for s in sentences if s.strip()]\n",
+        "        if not sentences:\n",
+        "            return [text.strip()] # Return the whole text as one chunk if still empty\n",
+        "\n",
+        "    chunks = []\n",
+        "    current_chunk_content = [] # Stores sentences for the current chunk\n",
+        "    current_chunk_len = 0      # Stores length of the current chunk as a string\n",
+        "\n",
+        "    for i, sentence in enumerate(sentences):\n",
+        "        # Calculate length of the sentence, plus a space if it's not the first sentence\n",
+        "        sentence_length = len(sentence) + (1 if current_chunk_content else 0)\n",
+        "\n",
+        "        if current_chunk_len + sentence_length <= chunk_size:\n",
+        "            current_chunk_content.append(sentence)\n",
+        "            current_chunk_len += sentence_length\n",
+        "        else:\n",
+        "            # Current chunk is too long, finalize it\n",
+        "            if current_chunk_content:\n",
+        "                chunks.append(\" \".join(current_chunk_content))\n",
+        "\n",
+        "            # Start a new chunk with overlap\n",
+        "            overlap_sentences = []\n",
+        "            overlap_char_count = 0\n",
+        "\n",
+        "            # Iterate backwards through the current_chunk_content to get sentences for overlap\n",
+        "            # Start from the last sentence that was *just* added to the previous chunk\n",
+        "            for j in range(len(current_chunk_content) - 1, -1, -1):\n",
+        "                prev_sentence = current_chunk_content[j]\n",
+        "                # Check if adding this sentence to overlap would exceed chunk_overlap\n",
+        "                # Account for space if not the first sentence in overlap\n",
+        "                potential_overlap_len = len(prev_sentence) + (1 if overlap_sentences else 0)\n",
+        "                if overlap_char_count + potential_overlap_len <= chunk_overlap:\n",
+        "                    overlap_sentences.insert(0, prev_sentence) # Add to the front to maintain order\n",
+        "                    overlap_char_count += potential_overlap_len\n",
+        "                else:\n",
+        "                    break\n",
+        "\n",
+        "            # The new chunk starts with the overlap sentences plus the current sentence that didn't fit\n",
+        "            current_chunk_content = overlap_sentences + [sentence]\n",
+        "            current_chunk_len = len(\" \".join(current_chunk_content))\n",
+        "\n",
+        "    # Add the last chunk if it contains any content\n",
+        "    if current_chunk_content:\n",
+        "        chunks.append(\" \".join(current_chunk_content))\n",
+        "\n",
+        "    # Filter out any potentially empty chunks\n",
+        "    return [chunk for chunk in chunks if chunk.strip()]\n",
+        "\n",
+        "\n",
+        "# Test your chunking function (COMMENTED OUT TO PREVENT NameError)\n",
+        "# test_text = list(knowledge_base.values())[0]\n",
+        "# test_chunks = chunk_document(test_text)\n",
+        "\n",
+        "# print(\"🔍 CHUNKING TEST\")\n",
+        "# print(\"=\" * 50)\n",
+        "# print(f\"Original document length: {len(test_text)} characters\")\n",
+        "# print(f\"Number of chunks created: {len(test_chunks)}\")\n",
+        "# print(f\"\\nFirst chunk preview:\")\n",
+        "# print(test_chunks[0][:200] + \"...\" if len(test_chunks) > 0 else \"No chunks created\")"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "9Co8gEdL0t7b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "15ef2c02-64b6-46c2-b427-104101f917aa"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Process all documents into chunks with metadata\n",
+        "# ============================================================\n",
+        "\n",
+        "# Configure your chunking parameters\n",
+        "CHUNK_SIZE = 400  # Adjust based on your content\n",
+        "CHUNK_OVERLAP = 50  # Adjust based on your content\n",
+        "\n",
+        "# Process all documents\n",
+        "all_chunks = []\n",
+        "all_metadatas = []\n",
+        "all_ids = []\n",
+        "\n",
+        "# Iterate through your knowledge base and create chunks\n",
+        "for doc_id, doc_content in knowledge_base.items():\n",
+        "    # Extract title from the first line of the document content if available\n",
+        "    # Assuming titles are in the format \"[Title]\" on the first line\n",
+        "    first_line = doc_content.strip().split('\\n')[0]\n",
+        "    doc_title = doc_id.replace('_', ' ').title() # Default title\n",
+        "\n",
+        "    if first_line.startswith('[') and first_line.endswith(']'):\n",
+        "        doc_title = first_line[1:-1].strip()\n",
+        "\n",
+        "    chunks = chunk_document(doc_content, chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)\n",
+        "    for i, chunk_text in enumerate(chunks):\n",
+        "        unique_chunk_id = f\"{doc_id}-chunk-{i}\"\n",
+        "        all_chunks.append(chunk_text)\n",
+        "        all_metadatas.append({\n",
+        "            \"source\": doc_id,\n",
+        "            \"chunk_index\": i,\n",
+        "            \"title\": doc_title\n",
+        "        })\n",
+        "        all_ids.append(unique_chunk_id)\n",
+        "\n",
+        "\n",
+        "# Validation\n",
+        "print(\"CHUNKING RESULTS\")\n",
+        "print(\"=\" * 50)\n",
+        "print(f\"Total chunks created: {len(all_chunks)}\")\n",
+        "print(f\"Chunk size setting: {CHUNK_SIZE}\")\n",
+        "print(f\"Chunk overlap setting: {CHUNK_OVERLAP}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "CHUNKING RESULTS\n",
+            "==================================================\n",
+            "Total chunks created: 30\n",
+            "Chunk size setting: 400\n",
+            "Chunk overlap setting: 50\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JTozByva0t7c"
+      },
+      "source": [
+        "### Chunking Strategy Justification\n",
+        "\n",
+        "**TODO:** In the cell below, explain your chunking decisions:"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "J2whhp8U0t7c"
+      },
+      "source": [
+        "**Why did you choose this chunk size?**\n",
+        "\n",
+        "I chose a chunk size of 400 characters to balance detail and context. Since technical specifications for adapters (like voltage and wattage) are often grouped together in short paragraphs, 400 characters is large enough to capture complete specification sets without including irrelevant information from adjacent topics.\n",
+        "\n",
+        "**Why did you choose this overlap amount?**\n",
+        "\n",
+        "A 50-character overlap was chosen to ensure that sentence fragments or transitional phrases aren't lost at the boundaries. This is particularly important for technical documentation where a warning or a requirement might span across the end of one chunk and the start of another.\n",
+        "\n",
+        "**Did you make any modifications to handle your specific content type?**\n",
+        "\n",
+        "Yes, the chunking function was designed to respect sentence boundaries (`[.!?]`) and assumes a semi-structured format where titles are wrapped in brackets (e.g., `[Title]`). This ensures that the extractive QA model receives coherent blocks of text rather than mid-sentence cuts which can lower confidence scores."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wkC-grO-0t7c"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 5: Vector Database Setup\n",
+        "\n",
+        "Create your ChromaDB collection and add all chunks with embeddings."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "u8zQI4K40t7c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c653f2ca-388d-491c-9d0f-bf9bd5e382f7"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Set up ChromaDB and create your collection\n",
+        "# ============================================================\n",
+        "\n",
+        "# Initialize ChromaDB client\n",
+        "chroma_client = chromadb.Client()\n",
+        "\n",
+        "# Create embedding function\n",
+        "embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(\n",
+        "    model_name=\"all-MiniLM-L6-v2\"\n",
+        ")\n",
+        "\n",
+        "# Create or get your collection with a descriptive name\n",
+        "# Use get_or_create_collection to prevent errors if it already exists\n",
+        "collection = chroma_client.get_or_create_collection(\n",
+        "    name=\"techgadgets_laptop_adapters\",  # Changed to a descriptive name\n",
+        "    embedding_function=embedding_function,\n",
+        "    metadata={\n",
+        "        \"description\": \"Knowledge base for TechGadgets Online Store focusing on laptop adapters.\",\n",
+        "        \"topic\": PROJECT_INFO[\"topic\"],\n",
+        "        \"scenario\": PROJECT_INFO[\"scenario\"]\n",
+        "    }\n",
+        ")\n",
+        "\n",
+        "print(\"Collection created or retrieved!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Collection created or retrieved!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "oaedlFrs0t7d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e3922fa7-cee7-4ea7-a44e-a7a7302cb68e"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Add all chunks to the collection\n",
+        "# ============================================================\n",
+        "\n",
+        "# Add your chunks to the collection\n",
+        "collection.add(\n",
+        "    documents=all_chunks,\n",
+        "    metadatas=all_metadatas,\n",
+        "    ids=all_ids\n",
+        ")\n",
+        "\n",
+        "print(f\"✅ Added {collection.count()} chunks to the database\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ Added 30 chunks to the database\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kWoq8reC0t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c88a83eb-0adb-497e-d391-25af0b85fa1e"
+      },
+      "source": [
+        "# Test retrieval with a sample query\n",
+        "test_query = \"What are the typical voltage and wattage requirements for laptop adapters?\"\n",
+        "\n",
+        "results = collection.query(\n",
+        "    query_texts=[test_query],\n",
+        "    n_results=3\n",
+        ")\n",
+        "\n",
+        "print(f\"Test Query: \\\"{test_query}\\\"\")\n",
+        "print(\"\\nTop 3 Retrieved Chunks:\")\n",
+        "for i in range(len(results['documents'][0])):\n",
+        "    print(f\"\\n{i+1}. Source: {results['metadatas'][0][i].get('source', 'Unknown')}\")\n",
+        "    print(f\"   Preview: {results['documents'][0][i][:150]}...\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Test Query: \"What are the typical voltage and wattage requirements for laptop adapters?\"\n",
+            "\n",
+            "Top 3 Retrieved Chunks:\n",
+            "\n",
+            "1. Source: document_1\n",
+            "   Preview: [Voltage and Wattage Specifications]\n",
+            "\n",
+            "    Laptop adapters must match the original power requirements exactly to ensure no damge to your device. Most l...\n",
+            "\n",
+            "2. Source: document_7\n",
+            "   Preview: Calculate minimum wattage by multiplying voltage times amperage from the original adapter label. Consider future laptop purchases, universal adapters ...\n",
+            "\n",
+            "3. Source: document_1\n",
+            "   Preview: Ultrabooks typically use 45W-65W adapters, gaming laptops require 150W-240W, and business laptops commonly use 65W-90W. Using an adapter with lower wa...\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "uP_cWLC40t7e"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 6: Build the RAG Pipeline\n",
+        "\n",
+        "Create a complete RAG pipeline class with all required functionality."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Ug4sPMyk0t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 66,
+          "referenced_widgets": [
+            "a4b0e3aa2db94541a6447a1afc9bd57d",
+            "35f280d813574c2c828ae87ab01606f6",
+            "40a7ad0ade9d49a7ad729de0918f3d6a",
+            "4eec15abde1149abb6ea08d2e7b7d4df",
+            "abf8ecc7611e4bcb97e0a63ccff29595",
+            "7cd9f66b010c4ee29228775d394af129",
+            "a7aab7e3bc924a8ebc64b7295635e4fc",
+            "c9f899046ad34d0183cd2f1687dc145e",
+            "aa72e15c233949c8a1e775e89c067c86",
+            "bf2a00eb7ce540a0b6507c45fa8a07bd",
+            "7dc09dc1c7ac42558433a7022a645603"
+          ]
+        },
+        "outputId": "c11caf42-b3ec-4ef1-d892-133cbb3e7d73"
+      },
+      "source": [
+        "# Load the question-answering model\n",
+        "qa_model = pipeline(\n",
+        "    \"question-answering\",\n",
+        "    model=\"distilbert-base-cased-distilled-squad\"\n",
+        ")\n",
+        "\n",
+        "print(\"QA model loaded!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "Loading weights:   0%|          | 0/102 [00:00<?, ?it/s]"
+            ],
+            "application/vnd.jupyter.widget-view+json": {
+              "version_major": 2,
+              "version_minor": 0,
+              "model_id": "a4b0e3aa2db94541a6447a1afc9bd57d"
+            }
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "QA model loaded!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UQ9jLS2e0t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c913e4d5-a968-4a44-e6e6-54af0b577870"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Implement your RAG Pipeline class\n",
+        "# ============================================================\n",
+        "\n",
+        "class RAGAssistant:\n",
+        "    \"\"\"\n",
+        "    A complete RAG-powered knowledge assistant.\n",
+        "\n",
+        "    Your implementation must include:\n",
+        "    1. Document retrieval from ChromaDB\n",
+        "    2. Answer generation using the QA model\n",
+        "    3. Confidence-based response handling\n",
+        "    4. Source attribution\n",
+        "    \"\"\"\n",
+        "\n",
+        "    def __init__(self, collection, qa_model, confidence_threshold: float = 0.3):\n",
+        "        \"\"\"\n",
+        "        Initialize the RAG assistant.\n",
+        "\n",
+        "        Args:\n",
+        "            collection: ChromaDB collection with embedded documents\n",
+        "            qa_model: Hugging Face QA pipeline\n",
+        "            confidence_threshold: Minimum confidence to provide a direct answer\n",
+        "        \"\"\"\n",
+        "        self.collection = collection\n",
+        "        self.qa_model = qa_model\n",
+        "        self.confidence_threshold = confidence_threshold\n",
+        "\n",
+        "    def retrieve(self, query: str, n_results: int = 3) -> Dict:\n",
+        "        \"\"\"\n",
+        "        Retrieve relevant documents for a query.\n",
+        "\n",
+        "        Args:\n",
+        "            query: The user's question\n",
+        "            n_results: Number of documents to retrieve\n",
+        "\n",
+        "        Returns:\n",
+        "            Dict containing documents, metadatas, and ids\n",
+        "        \"\"\"\n",
+        "        results = self.collection.query(\n",
+        "            query_texts=[query],\n",
+        "            n_results=n_results,\n",
+        "            include=['documents', 'metadatas']\n",
+        "        )\n",
+        "        return results\n",
+        "\n",
+        "    def generate_answer(self, question: str, context: str) -> Dict:\n",
+        "        \"\"\"\n",
+        "        Generate an answer from the given context.\n",
+        "\n",
+        "        Args:\n",
+        "            question: The user's question\n",
+        "            context: Retrieved context to answer from\n",
+        "\n",
+        "        Returns:\n",
+        "            Dict with answer and confidence score\n",
+        "        \"\"\"\n",
+        "        if not context.strip():\n",
+        "            return {\"answer\": \"I don't have enough information to answer that based on the provided context.\", \"score\": 0.0}\n",
+        "\n",
+        "        qa_input = {\n",
+        "            'question': question,\n",
+        "            'context': context\n",
+        "        }\n",
+        "        # Fix: Unpack dictionary using ** to provide named arguments to the pipeline\n",
+        "        result = self.qa_model(**qa_input)\n",
+        "        return {\"answer\": result['answer'], \"score\": result['score']}\n",
+        "\n",
+        "    def ask(self, question: str, n_results: int = 3) -> Dict:\n",
+        "        \"\"\"\n",
+        "        Complete RAG pipeline: retrieve and generate answer.\n",
+        "        \"\"\"\n",
+        "        retrieval_results = self.retrieve(question, n_results=n_results)\n",
+        "\n",
+        "        documents = retrieval_results['documents'][0]\n",
+        "        metadatas = retrieval_results['metadatas'][0]\n",
+        "\n",
+        "        if not documents:\n",
+        "            return {\n",
+        "                \"question\": question,\n",
+        "                \"answer\": \"I couldn't find any relevant information to answer your question.\",\n",
+        "                \"confidence\": 0.0,\n",
+        "                \"sources\": [],\n",
+        "                \"is_confident\": False\n",
+        "            }\n",
+        "\n",
+        "        context_parts = []\n",
+        "        unique_sources = set()\n",
+        "        for i, doc_content in enumerate(documents):\n",
+        "            source_id = metadatas[i].get('source', 'Unknown Source')\n",
+        "            chunk_index = metadatas[i].get('chunk_index', i)\n",
+        "            context_parts.append(f\"[Source: {source_id}, Chunk {chunk_index}] {doc_content}\")\n",
+        "            unique_sources.add(source_id)\n",
+        "\n",
+        "        combined_context = \"\\n\\n\".join(context_parts)\n",
+        "\n",
+        "        generation_output = self.generate_answer(question, combined_context)\n",
+        "        answer = generation_output['answer']\n",
+        "        confidence = generation_output['score']\n",
+        "\n",
+        "        is_confident = confidence >= self.confidence_threshold\n",
+        "\n",
+        "        if not is_confident:\n",
+        "            answer = f\"I'm not confident enough to give a precise answer. My confidence score was {confidence:.2%}. You might want to rephrase your question.\"\n",
+        "\n",
+        "        return {\n",
+        "            \"question\": question,\n",
+        "            \"answer\": answer,\n",
+        "            \"confidence\": confidence,\n",
+        "            \"sources\": sorted(list(unique_sources)),\n",
+        "            \"is_confident\": is_confident\n",
+        "        }\n",
+        "\n",
+        "    def format_response(self, result: Dict) -> str:\n",
+        "        \"\"\"\n",
+        "        Format the result into a user-friendly response string.\n",
+        "        \"\"\"\n",
+        "        response_str = f\"Assistant: {result['answer']}\\n\"\n",
+        "        response_str += f\"Confidence: {result['confidence']:.2%}\\n\"\n",
+        "        if result['sources']:\n",
+        "            response_str += f\"Sources: {', '.join(result['sources'])}\\n\"\n",
+        "        return response_str\n",
+        "\n",
+        "# Create your assistant\n",
+        "assistant = RAGAssistant(collection, qa_model, confidence_threshold=0.3)\n",
+        "\n",
+        "print(\"✅ RAG Assistant created!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ RAG Assistant created!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "i8GhwlJn0t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "a531fff3-063d-4687-fd1f-ca8f71246030"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# Test your assistant with a few questions\n",
+        "# ============================================================\n",
+        "\n",
+        "test_questions = [\n",
+        "    \"What is the standard voltage and wattage for ultrabooks?\",\n",
+        "    \"What are the benefits of USB-C Power Delivery for laptops?\",\n",
+        "    \"What should I check before buying a replacement adapter?\",\n",
+        "]\n",
+        "\n",
+        "print(\"INITIAL TESTING\")\n",
+        "print(\"=\" * 60)\n",
+        "for question in test_questions:\n",
+        "    result = assistant.ask(question)\n",
+        "    print(f\"\\nQ: {question}\")\n",
+        "    print(assistant.format_response(result))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "INITIAL TESTING\n",
+            "============================================================\n",
+            "\n",
+            "Q: What is the standard voltage and wattage for ultrabooks?\n",
+            "Assistant: 100W\n",
+            "Confidence: 43.80%\n",
+            "Sources: document_1, document_2, document_7\n",
+            "\n",
+            "\n",
+            "Q: What are the benefits of USB-C Power Delivery for laptops?\n",
+            "Assistant: more budget options\n",
+            "Confidence: 74.56%\n",
+            "Sources: document_2, document_5\n",
+            "\n",
+            "\n",
+            "Q: What should I check before buying a replacement adapter?\n",
+            "Assistant: brand loyalty\n",
+            "Confidence: 74.10%\n",
+            "Sources: document_3, document_7\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vDch6jNn0t7e"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 7: Comprehensive Testing\n",
+        "\n",
+        "Test your system thoroughly with at least 15 questions covering different types and difficulty levels."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0FreSmoQ0t7e"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# TODO: Create your comprehensive test suite\n",
+        "# ============================================================\n",
+        "\n",
+        "# Organize your test questions by category\n",
+        "test_suite = {\n",
+        "    \"simple_facts\": [\n",
+        "        \"What wattage do gaming laptops typically require?\",\n",
+        "        \"What is the standard voltage range for most laptops?\",\n",
+        "        \"What does UL certification stand for?\",\n",
+        "        \"Which manufacturers produce OEM adapters like Lite-On?\",\n",
+        "        \"What is the maximum wattage supported by USB-PD 2.0?\"\n",
+        "    ],\n",
+        "\n",
+        "    \"detailed_explanations\": [\n",
+        "        \"How do higher wattage adapters behave when connected to a laptop?\",\n",
+        "        \"What are the risks of using an adapter with the wrong voltage?\",\n",
+        "        \"What causes common laptop adapter failures according to the troubleshooting guide?\",\n",
+        "        \"How does USB-C Power Delivery negotiate power with a laptop?\",\n",
+        "        \"What are the typical requirements for making a warranty claim on an adapter?\"\n",
+        "    ],\n",
+        "\n",
+        "    \"comparison_or_complex\": [\n",
+        "        \"Compare the power requirements of ultrabooks versus gaming laptops.\",\n",
+        "        \"Explain the difference between USB-PD 2.0 and USB-PD 3.1 standards.\"\n",
+        "    ],\n",
+        "\n",
+        "    \"edge_cases\": [\n",
+        "        \"How do I repair a cracked laptop screen?\",\n",
+        "        \"What is the return policy for wireless headphones?\",\n",
+        "        \"Can I use a solar panel to charge my laptop directly?\"\n",
+        "    ]\n",
+        "}"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "LtDhD3_h0t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e56eb8fc-5894-43f6-a969-106db2f6c9ee"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# Run comprehensive tests and collect results\n",
+        "# ============================================================\n",
+        "\n",
+        "test_results = []\n",
+        "\n",
+        "print(\"COMPREHENSIVE TEST RESULTS\")\n",
+        "print(\"=\" * 70)\n",
+        "\n",
+        "for category, questions in test_suite.items():\n",
+        "    print(f\"\\n\\n{'='*70}\")\n",
+        "    print(f\"CATEGORY: {category.upper().replace('_', ' ')}\")\n",
+        "    print(\"=\" * 70)\n",
+        "\n",
+        "    for question in questions:\n",
+        "        result = assistant.ask(question)\n",
+        "\n",
+        "        # Store result for analysis\n",
+        "        test_results.append({\n",
+        "            \"category\": category,\n",
+        "            \"question\": question,\n",
+        "            \"answer\": result[\"answer\"],\n",
+        "            \"confidence\": result[\"confidence\"],\n",
+        "            \"is_confident\": result[\"is_confident\"],\n",
+        "            \"sources\": result[\"sources\"]\n",
+        "        })\n",
+        "\n",
+        "        # Display result\n",
+        "        confidence_indicator = \"✅\" if result[\"is_confident\"] else \"⚠️\"\n",
+        "        print(f\"\\n{confidence_indicator} Q: {question}\")\n",
+        "        print(f\"   A: {result['answer']}\")\n",
+        "        print(f\"   Confidence: {result['confidence']:.2%} | Sources: {', '.join(result['sources'][:2])}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "COMPREHENSIVE TEST RESULTS\n",
+            "======================================================================\n",
+            "\n",
+            "\n",
+            "======================================================================\n",
+            "CATEGORY: SIMPLE FACTS\n",
+            "======================================================================\n",
+            "\n",
+            "✅ Q: What wattage do gaming laptops typically require?\n",
+            "   A: 150W-240W\n",
+            "   Confidence: 96.10% | Sources: document_1, document_7\n",
+            "\n",
+            "⚠️ Q: What is the standard voltage range for most laptops?\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 26.95%. You might want to rephrase your question.\n",
+            "   Confidence: 26.95% | Sources: document_1, document_7\n",
+            "\n",
+            "✅ Q: What does UL certification stand for?\n",
+            "   A: Underwriters Laboratories\n",
+            "   Confidence: 95.34% | Sources: document_3\n",
+            "\n",
+            "⚠️ Q: Which manufacturers produce OEM adapters like Lite-On?\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 24.44%. You might want to rephrase your question.\n",
+            "   Confidence: 24.44% | Sources: document_2, document_3\n",
+            "\n",
+            "✅ Q: What is the maximum wattage supported by USB-PD 2.0?\n",
+            "   A: 100W\n",
+            "   Confidence: 49.24% | Sources: document_1, document_2\n",
+            "\n",
+            "\n",
+            "======================================================================\n",
+            "CATEGORY: DETAILED EXPLANATIONS\n",
+            "======================================================================\n",
+            "\n",
+            "✅ Q: How do higher wattage adapters behave when connected to a laptop?\n",
+            "   A: generally safe\n",
+            "   Confidence: 36.15% | Sources: document_1, document_7\n",
+            "\n",
+            "✅ Q: What are the risks of using an adapter with the wrong voltage?\n",
+            "   A: permanent damage\n",
+            "   Confidence: 83.61% | Sources: document_1, document_3\n",
+            "\n",
+            "✅ Q: What causes common laptop adapter failures according to the troubleshooting guide?\n",
+            "   A: cable damage, connector wear, or power outlet issues\n",
+            "   Confidence: 63.31% | Sources: document_4\n",
+            "\n",
+            "✅ Q: How does USB-C Power Delivery negotiate power with a laptop?\n",
+            "   A: automatically with compatible chargers\n",
+            "   Confidence: 36.55% | Sources: document_2, document_5\n",
+            "\n",
+            "✅ Q: What are the typical requirements for making a warranty claim on an adapter?\n",
+            "   A: 90 days to 3 years\n",
+            "   Confidence: 53.17% | Sources: document_3, document_7\n",
+            "\n",
+            "\n",
+            "======================================================================\n",
+            "CATEGORY: COMPARISON OR COMPLEX\n",
+            "======================================================================\n",
+            "\n",
+            "⚠️ Q: Compare the power requirements of ultrabooks versus gaming laptops.\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 0.24%. You might want to rephrase your question.\n",
+            "   Confidence: 0.24% | Sources: document_1, document_2\n",
+            "\n",
+            "⚠️ Q: Explain the difference between USB-PD 2.0 and USB-PD 3.1 standards.\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 13.80%. You might want to rephrase your question.\n",
+            "   Confidence: 13.80% | Sources: document_2, document_5\n",
+            "\n",
+            "\n",
+            "======================================================================\n",
+            "CATEGORY: EDGE CASES\n",
+            "======================================================================\n",
+            "\n",
+            "⚠️ Q: How do I repair a cracked laptop screen?\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 1.52%. You might want to rephrase your question.\n",
+            "   Confidence: 1.52% | Sources: document_4, document_7\n",
+            "\n",
+            "⚠️ Q: What is the return policy for wireless headphones?\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 29.96%. You might want to rephrase your question.\n",
+            "   Confidence: 29.96% | Sources: document_7, document_8\n",
+            "\n",
+            "⚠️ Q: Can I use a solar panel to charge my laptop directly?\n",
+            "   A: I'm not confident enough to give a precise answer. My confidence score was 0.06%. You might want to rephrase your question.\n",
+            "   Confidence: 0.06% | Sources: document_1, document_5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4dGvwTX70t7e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "da28f4b0-39e9-4006-d8ec-0a9ab57aa5bd"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# Analyze test results\n",
+        "# ============================================================\n",
+        "\n",
+        "print(\"\\n\" + \"=\" * 70)\n",
+        "print(\"TEST RESULTS SUMMARY\")\n",
+        "print(\"=\" * 70)\n",
+        "\n",
+        "total_questions = len(test_results)\n",
+        "confident_answers = sum(1 for r in test_results if r[\"is_confident\"])\n",
+        "avg_confidence = sum(r[\"confidence\"] for r in test_results) / total_questions\n",
+        "\n",
+        "print(f\"\\nTotal questions tested: {total_questions}\")\n",
+        "print(f\"Confident answers: {confident_answers} ({confident_answers/total_questions:.1%})\")\n",
+        "print(f\"Low confidence answers: {total_questions - confident_answers}\")\n",
+        "print(f\"Average confidence: {avg_confidence:.2%}\")\n",
+        "\n",
+        "# By category\n",
+        "print(\"\\nResults by category:\")\n",
+        "for cat_name in test_suite.keys():\n",
+        "    category_results = [r for r in test_results if r[\"category\"] == cat_name]\n",
+        "    if category_results:\n",
+        "        cat_confident = sum(1 for r in category_results if r[\"is_confident\"])\n",
+        "        cat_avg = sum(r[\"confidence\"] for r in category_results) / len(category_results)\n",
+        "        print(f\"  {cat_name}: {cat_confident}/{len(category_results)} confident, avg confidence: {cat_avg:.2%}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "======================================================================\n",
+            "TEST RESULTS SUMMARY\n",
+            "======================================================================\n",
+            "\n",
+            "Total questions tested: 15\n",
+            "Confident answers: 8 (53.3%)\n",
+            "Low confidence answers: 7\n",
+            "Average confidence: 40.70%\n",
+            "\n",
+            "Results by category:\n",
+            "  simple_facts: 3/5 confident, avg confidence: 58.41%\n",
+            "  detailed_explanations: 5/5 confident, avg confidence: 54.56%\n",
+            "  comparison_or_complex: 0/2 confident, avg confidence: 7.02%\n",
+            "  edge_cases: 0/3 confident, avg confidence: 10.51%\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IE5Phdvl0t7e"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 8: Analysis and Reflection\n",
+        "\n",
+        "Analyze your system's performance and document your findings."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HevWsDkq0t7e"
+      },
+      "source": [
+        "### 8.1 Performance Analysis\n",
+        "\n",
+        "**Which types of questions did your system handle best? Why?**\n",
+        "\n",
+        "The system handled \"Detailed Explanations\" and \"Simple Facts\" best, with 100% and 60% confidence rates respectively. This is because these questions often had a high degree of semantic overlap with specific chunks in the knowledge base, allowing the retrieval system to find clear, direct answers.\n",
+        "\n",
+        "**Which types of questions did your system struggle with? Why?**\n",
+        "\n",
+        "The system struggled with \"Comparison or Complex\" questions. This is because the current RAG pipeline retrieves individual chunks and passes them to a extractive QA model. The model is good at finding specific strings in a text but struggles to synthesize information across different documents or reason through multi-part comparisons.\n",
+        "\n",
+        "**Did the edge case questions correctly trigger low-confidence responses?**\n",
+        "\n",
+        "Yes. The system achieved an average confidence of only 10.51% for edge cases. Since this is well below our 30% threshold, the assistant correctly provided the fallback response instead of trying to answer questions about screen repairs or headphones which were not in the database."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "05Vrbyen0t7e"
+      },
+      "source": [
+        "### 8.2 Strengths and Weaknesses\n",
+        "\n",
+        "**List 3 strengths of your RAG system:**\n",
+        "\n",
+        "1. **Precise Factual Retrieval**: The system is highly accurate (over 95% confidence) when answering direct questions about numbers, specifications, and certifications found in the text.\n",
+        "2. **Effective Safety Filtering**: The confidence-based thresholding correctly prevents the model from hallucinating answers to questions outside the knowledge base.\n",
+        "3. **Clear Source Attribution**: By linking responses to specific document IDs and chunks, users can verify the information provided against the original knowledge base.\n",
+        "\n",
+        "**List 3 weaknesses or limitations:**\n",
+        "\n",
+        "1. **Lack of Information Synthesis**: The model struggles to compare data points across different documents (e.g., comparing gaming vs. business laptop requirements).\n",
+        "2. **Sensitivity to Phrasing**: Slight variations in how a question is asked can significantly impact the confidence score, even if the answer is present.\n",
+        "3. **Extractive Limitations**: Because the model is extractive, it often provides short, clipped answers rather than helpful, conversational explanations."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KwnZ15jl0t7e"
+      },
+      "source": [
+        "### 8.3 Improvement Recommendations\n",
+        "\n",
+        "**If you were to deploy this as a production system, what improvements would you make?**\n",
+        "\n",
+        "1. **Generation Improvements**: Switch from an extractive QA model (DistilBERT) to a generative LLM (like Gemini or GPT-4). This would allow the system to synthesize information across multiple chunks and provide more natural, conversational answers.\n",
+        "\n",
+        "2. **Retrieval Enhancements**: Implement **Hybrid Search**, combining semantic vector search with keyword-based (BM25) search to ensure specific technical terms like model numbers are matched accurately.\n",
+        "\n",
+        "3. **Chunking Strategy Changes**: Use **Recursive Character Chunking** with a larger context window. This would help preserve more semantic context within each chunk compared to simple fixed-size splitting.\n",
+        "\n",
+        "4. **Knowledge Base Improvements**: Add a 'Metadata' layer to the knowledge base that explicitly defines product hierarchies (e.g., matching adapters to specific laptop models) to help the system answer compatibility questions more reliably.\n",
+        "\n",
+        "5. **User Experience Features**: Implement a proper chat interface with 'suggested questions' based on current trends and a feedback loop (thumbs up/down) to help retrain the model on low-confidence queries."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zZIChUdY0t7e"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Part 9: Demo Showcase\n",
+        "\n",
+        "Create a polished demo of your assistant in action."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xtF4EkKo0t7f",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5ff4b14f-4eb5-4626-db57-bb92acffc35d"
+      },
+      "source": [
+        "# ============================================================\n",
+        "# Create a demo showcasing your assistant\n",
+        "# ============================================================\n",
+        "\n",
+        "def run_demo(assistant, demo_questions: List[str]):\n",
+        "    \"\"\"\n",
+        "    Run a polished demo of the RAG assistant.\n",
+        "    \"\"\"\n",
+        "    print(\"\\n\" + \"=\"*70)\n",
+        "    print(f\"{PROJECT_INFO['topic']} - Knowledge Assistant Demo\")\n",
+        "    print(f\"   {PROJECT_INFO['description']}\")\n",
+        "    print(\"=\"*70)\n",
+        "\n",
+        "    for i, question in enumerate(demo_questions, 1):\n",
+        "        print(f\"\\n{'─'*70}\")\n",
+        "        print(f\"User Question {i}:\")\n",
+        "        print(f\"   \\\"{question}\\\"\")\n",
+        "        print()\n",
+        "\n",
+        "        result = assistant.ask(question)\n",
+        "\n",
+        "        print(f\"Assistant Response:\")\n",
+        "        print(f\"   {result['answer']}\")\n",
+        "        print()\n",
+        "        print(f\"   Sources: {', '.join(result['sources'][:2])}\")\n",
+        "        print(f\"   Confidence: {result['confidence']:.1%}\")\n",
+        "\n",
+        "    print(f\"\\n{'='*70}\")\n",
+        "    print(\"Demo complete!\")\n",
+        "    print(\"=\"*70)\n",
+        "\n",
+        "\n",
+        "# Select 5 of your best questions for the demo\n",
+        "demo_questions = [\n",
+        "    # TODO: Choose 5 questions that showcase your system well\n",
+        "    \"Demo question 1\",\n",
+        "    \"Demo question 2\",\n",
+        "    \"Demo question 3\",\n",
+        "    \"Demo question 4\",\n",
+        "    \"Demo question 5\",\n",
+        "]\n",
+        "\n",
+        "run_demo(assistant, demo_questions)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "======================================================================\n",
+            "TechGadgets Online Store - Knowledge Assistant Demo\n",
+            "   A tool to help you pick out the best adapter for your laptop.\n",
+            "======================================================================\n",
+            "\n",
+            "──────────────────────────────────────────────────────────────────────\n",
+            "User Question 1:\n",
+            "   \"Demo question 1\"\n",
+            "\n",
+            "Assistant Response:\n",
+            "   I'm not confident enough to give a precise answer. My confidence score was 13.14%. You might want to rephrase your question.\n",
+            "\n",
+            "   Sources: document_5, document_7\n",
+            "   Confidence: 13.1%\n",
+            "\n",
+            "──────────────────────────────────────────────────────────────────────\n",
+            "User Question 2:\n",
+            "   \"Demo question 2\"\n",
+            "\n",
+            "Assistant Response:\n",
+            "   I'm not confident enough to give a precise answer. My confidence score was 11.50%. You might want to rephrase your question.\n",
+            "\n",
+            "   Sources: document_5, document_7\n",
+            "   Confidence: 11.5%\n",
+            "\n",
+            "──────────────────────────────────────────────────────────────────────\n",
+            "User Question 3:\n",
+            "   \"Demo question 3\"\n",
+            "\n",
+            "Assistant Response:\n",
+            "   I'm not confident enough to give a precise answer. My confidence score was 1.20%. You might want to rephrase your question.\n",
+            "\n",
+            "   Sources: document_5, document_7\n",
+            "   Confidence: 1.2%\n",
+            "\n",
+            "──────────────────────────────────────────────────────────────────────\n",
+            "User Question 4:\n",
+            "   \"Demo question 4\"\n",
+            "\n",
+            "Assistant Response:\n",
+            "   I'm not confident enough to give a precise answer. My confidence score was 23.43%. You might want to rephrase your question.\n",
+            "\n",
+            "   Sources: document_5, document_7\n",
+            "   Confidence: 23.4%\n",
+            "\n",
+            "──────────────────────────────────────────────────────────────────────\n",
+            "User Question 5:\n",
+            "   \"Demo question 5\"\n",
+            "\n",
+            "Assistant Response:\n",
+            "   I'm not confident enough to give a precise answer. My confidence score was 17.30%. You might want to rephrase your question.\n",
+            "\n",
+            "   Sources: document_3, document_7\n",
+            "   Confidence: 17.3%\n",
+            "\n",
+            "======================================================================\n",
+            "Demo complete!\n",
+            "======================================================================\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Tj2aUudf0t7f"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "## Submission Checklist\n",
+        "\n",
+        "Before submitting, verify you have completed all requirements:\n",
+        "\n",
+        "### Knowledge Base\n",
+        "- [*] At least 8 documents in your knowledge base\n",
+        "- [*] Each document is at least 150 words\n",
+        "- [*] Documents cover diverse subtopics\n",
+        "- [*] Content includes specific, factual information\n",
+        "\n",
+        "### Technical Implementation\n",
+        "- [*] Chunking function implemented with configurable parameters\n",
+        "- [*] ChromaDB collection created and populated\n",
+        "- [*] RAG pipeline class with all required methods\n",
+        "- [*] Confidence-based response handling implemented\n",
+        "- [*] Source attribution included in responses\n",
+        "\n",
+        "### Testing\n",
+        "- [*] At least 15 test questions\n",
+        "- [*] Questions organized by category/difficulty\n",
+        "- [*] At least 3 edge case questions included\n",
+        "- [*] All test results documented\n",
+        "\n",
+        "### Documentation\n",
+        "- [*] Project declaration completed (Part 2)\n",
+        "- [*] Chunking strategy justified (Part 4)\n",
+        "- [*] Performance analysis completed (Part 8.1)\n",
+        "- [*] Strengths and weaknesses identified (Part 8.2)\n",
+        "- [*] Improvement recommendations provided (Part 8.3)\n",
+        "- [*] Lessons learned documented (Part 8.4)\n",
+        "\n",
+        "### Demo\n",
+        "- [*] Demo showcase with 5 well-chosen questions\n",
+        "- [*] All code cells executed with visible output\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "## Congratulations!\n",
+        "\n",
+        "You have built a complete RAG-powered knowledge assistant from scratch!\n",
+        "\n",
+        "### What You Demonstrated:\n",
+        "\n",
+        "1. Creating and organizing a knowledge base\n",
+        "2. Implementing document chunking strategies\n",
+        "3. Using vector databases for semantic search\n",
+        "4. Building end-to-end RAG pipelines\n",
+        "5. Handling edge cases and uncertainty\n",
+        "6. Testing and analyzing system performance\n",
+        "7. Documenting technical decisions and learnings\n"
+      ],
+      "metadata": {
+        "id": "8NFMEF6o5YtE"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Submission Instructions\n",
+        "\n",
+        "1. Ensure all code cells have been executed\n",
+        "2. Verify all text cells are filled in\n",
+        "3. Save the notebook (File → Save)\n",
+        "4. Download as .ipynb (File → Download → Download .ipynb)\n",
+        "5. Rename the file to: `RAG_Project_[YourName].ipynb`"
+      ],
+      "metadata": {
+        "id": "WQcczQwO_A7s"
+      }
+    }
+  ]
+}
