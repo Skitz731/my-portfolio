@@ -1,0 +1,27 @@
+# Data file contents (tracked by DVC, not Git)
+# We ignore specific file types rather than the whole data/ directory
+# so that DVC pointer files (.dvc) can still be tracked by Git
+data/**/*.csv
+data/**/*.parquet
+data/**/*.json.gz
+
+# Model files (tracked by DVC)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+models/*.onnx
+
+# Metrics output
+metrics/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
