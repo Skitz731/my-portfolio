@@ -1,0 +1,14 @@
+{
+  "model_type": "logistic_regression",
+  "test_size": 0.2,
+  "random_state": 42,
+  "handle_missing": "median",
+  "scale_features": true,
+  "features_to_drop": [],
+  "lr_C": 1.0,
+  "rf_n_estimators": 100,
+  "rf_max_depth": null,
+  "gb_n_estimators": 100,
+  "gb_learning_rate": 0.1,
+  "gb_max_depth": 3
+}
