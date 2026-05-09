@@ -1,0 +1,101 @@
+name: MLOps CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # Job 1: Run Tests
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Pytest
+      run: |
+        pytest tests/ -v --tb=short
+
+  # Job 2: Train Model
+  # This job depends on the 'test' job passing
+  train:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install DVC and pull data
+      run: |
+        pip install dvc
+        dvc init --no-scm  # Initialize DVC without re-initializing git
+        dvc pull
+        # Note: You must have DVC remote configured. 
+        # For CI, you might need to set up DVC credentials or use a local remote if testing locally.
+        # If using a local remote in .dvc/config, ensure it's accessible or mock it.
+        # For this exercise, we assume you have a working DVC remote or skip this if data is small enough to commit (not recommended).
+        # Alternative: If DVC pull fails due to missing remote, we can fallback to downloading the CSV directly for CI.
+        echo "Attempting to pull data..."
+        if ! dvc pull; then
+          echo "DVC pull failed. Attempting direct download for CI..."
+          # Fallback: Download the CSV directly if DVC remote is not set up in CI
+          # This ensures the pipeline runs even if DVC remote isn't configured for CI
+          mkdir -p data/raw
+          # Replace with your direct download URL or a mock file generation
+          # For now, we'll assume the user has set up a public DVC remote or we skip this step in a real scenario
+          # In a real project, you'd configure DVC secrets here.
+          echo "WARNING: DVC remote not configured for CI. Skipping data pull. Training might fail if data is missing."
+        fi
+
+    - name: Run Training Script
+      run: |
+        python src/model_training.py --config configs/training_config.yaml
+      # The script exits with code 1 if performance thresholds are not met, causing this job to fail.
+
+    - name: Upload MLflow Artifacts (Optional)
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: mlflow-logs
+        path: mlruns/
+        retention-days: 5

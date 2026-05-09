@@ -1,0 +1,6 @@
+data:
+  raw_path: "data/raw/WA_Fn-UseC_-HR-Employee-Attrition.csv"
+  processed_path: "data/processed/"
+  train_split: 0.8
+  random_state: 42
+  target_column: "Attrition"
