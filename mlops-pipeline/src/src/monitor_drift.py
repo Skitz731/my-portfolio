@@ -12,7 +12,7 @@ import yaml
 
 try:
     try:
-        from evidently.report import Report
+        from evidently.report import Report # type: ignore
     except ImportError:
         from evidently import Report
     from evidently.presets import DataDriftPreset
@@ -146,10 +146,10 @@ def run_drift_monitoring(
     report_path = os.path.join(output_dir, f"drift_report_{timestamp}.html")
     
     print(f"Saving report to {report_path}...")
-    report.save_html(report_path)
+    report.save_html(report_path) # type: ignore
     
     # Extract actual drift results from the report
-    report_result = report.as_dict()
+    report_result = report.as_dict() # type: ignore
     
     # DataDriftPreset contains DataDriftTable metric
     # We look for the 'share_of_drifted_columns' in the result

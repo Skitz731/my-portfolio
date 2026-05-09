@@ -1,15 +1,21 @@
-# MLOps Pipeline Project
+# MLOps Pipeline: Employee Attrition Prediction
 
-## Overview
+A production-ready Machine Learning Operations (MLOps) pipeline demonstrating end-to-end lifecycle management for an Employee Attrition prediction model. This project integrates version control, experiment tracking, automated testing, CI/CD, and drift monitoring.
 
-This project implements a complete MLOps pipeline for heart disease prediction, 
-including version control with Git and DVC, experiment tracking with MLflow, 
-automated testing with pytest, CI/CD with GitHub Actions, and drift monitoring with Evidently.
+## Project Overview
 
-## Project Structure
+This project takes a raw dataset of employee attributes and transforms it into a monitored, automated ML system. The core objectives are:
+- **Reproducibility**: Using Git for code and DVC for data versioning.
+- **Experiment Tracking**: Logging hyperparameters, metrics, and models with MLflow.
+- **Quality Assurance**: Comprehensive testing with `pytest` (unit, data, and model validation).
+- **Automation**: CI/CD pipelines via GitHub Actions for testing and training.
+- **Monitoring**: Detecting data drift in production using Evidently.
 
+**Dataset**: IBM HR Analytics Employee Attrition Dataset (~1,470 rows, 35 features).
+**Task**: Binary Classification (Predicting if an employee will leave: Yes/No).
 
-
+##  Project Structure
+mlops-pipeline/ ├── .dvc/ # DVC configuration and cache pointers ├── .github/ │ └── workflows/ │ └── ci-cd.yml # GitHub Actions CI/CD pipeline (Test & Train) ├── configs/ │ └── training_config.yaml # Hyperparameters, paths, and thresholds ├── data/ │ ├── raw/ # Raw dataset (tracked by DVC, not Git) │ │ └── employee_attrition.csv.dvc │ └── processed/ # Preprocessed splits (optional DVC tracking) ├── reports/ # Generated Evidently drift reports (HTML) ├── src/ │ ├── init.py │ ├── data_preprocessing.py # Data loading, cleaning, encoding, splitting │ ├── model_training.py # Training script with MLflow integration │ └── monitor_drift.py # Drift detection script using Evidently ├── tests/ │ ├── init.py │ ├── test_preprocessing.py # Unit tests for data functions │ ├── test_data_validation.py # Tests for dataset integrity │ └── test_model_validation.py # Tests for model output and performance ├── compare_experiments.py # Script to query MLflow and find best run ├── requirements.txt # Python dependencies ├── .gitignore # Git ignore rules (data, venv, artifacts) ├── .dvcignore # DVC ignore rules ├── README.md # This file └── MONITORING.md # Drift analysis and recommendations
 
 # Drift Monitoring Analysis
 
