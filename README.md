@@ -3,6 +3,39 @@
 A production-ready Machine Learning Operations (MLOps) pipeline demonstrating end-to-end lifecycle management for an Employee Attrition prediction model. This project integrates version control, experiment tracking, automated testing, CI/CD, and drift monitoring.
 
 ## Project Overview
+mlops-pipeline/
+│
+├── 📁 .github/
+│   └── workflows/
+│       └── ci-cd.yml              # GitHub Actions CI/CD pipeline
+│
+├── 📁 configs/
+│   └── training_config.yaml       # Hyperparameters & settings
+│
+├── 📁 data/
+│   ├── raw/                       # Raw dataset (DVC-tracked)
+│   │   └── employee_attrition.csv.dvc
+│   └── processed/                 # Preprocessed splits
+│
+├── 📁 reports/
+│   └── drift_report_*.html        # Evidently drift reports
+│
+├── 📁 src/
+│   ├── data_preprocessing.py      # Data loading & cleaning
+│   ├── model_training.py          # Training with MLflow
+│   └── monitor_drift.py           # Drift detection
+│
+├── 📁 tests/
+│   ├── test_preprocessing.py      # Unit tests
+│   ├── test_data_validation.py    # Data integrity tests
+│   └── test_model_validation.py   # Model validation tests
+│
+├── 📄 compare_experiments.py      # Find best MLflow run
+├── 📄 requirements.txt            # Python dependencies
+├── 📄 README.md                   # This file
+├── 📄 MONITORING.md               # Drift analysis notes
+├── 📄 .gitignore                  # Git ignore rules
+└── 📄 .dvcignore                  # DVC ignore rules
 
 This project takes a raw dataset of employee attributes and transforms it into a monitored, automated ML system. The core objectives are:
 - **Reproducibility**: Using Git for code and DVC for data versioning.
@@ -15,7 +48,7 @@ This project takes a raw dataset of employee attributes and transforms it into a
 **Task**: Binary Classification (Predicting if an employee will leave: Yes/No).
 
 ##  Project Structure
-mlops-pipeline/ ├── .dvc/ # DVC configuration and cache pointers ├── .github/ │ └── workflows/ │ └── ci-cd.yml # GitHub Actions CI/CD pipeline (Test & Train) ├── configs/ │ └── training_config.yaml # Hyperparameters, paths, and thresholds ├── data/ │ ├── raw/ # Raw dataset (tracked by DVC, not Git) │ │ └── employee_attrition.csv.dvc │ └── processed/ # Preprocessed splits (generated during training) ├── reports/ # Generated Evidently drift reports (HTML) ├── src/ │ ├── init.py │ ├── data_preprocessing.py # Data loading, cleaning, encoding, splitting │ ├── model_training.py # Training script with MLflow integration │ └── monitor_drift.py # Drift detection script using Evidently ├── tests/ │ ├── init.py │ ├── test_preprocessing.py # Unit tests for data functions │ ├── test_data_validation.py # Tests for dataset integrity │ └── test_model_validation.py # Tests for model output and performance ├── compare_experiments.py # Script to query MLflow and find best run ├── requirements.txt # Python dependencies ├── .gitignore # Git ignore rules (data, venv, artifacts) ├── .dvcignore # DVC ignore rules ├── README.md # This file └── MONITORING.md # Drift analysis and recommendations
+286509
 # Drift Monitoring Analysis
 
 ## 1. Which features showed drift and why?
