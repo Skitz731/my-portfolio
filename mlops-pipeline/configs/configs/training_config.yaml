@@ -1,0 +1,36 @@
+data:
+  raw_path: "data/raw/employee_attrition.csv"  # Update if your filename is different
+  processed_path: "data/processed/"
+  train_split: 0.8
+  random_state: 42
+  target_column: "Attrition"  # Crucial: Must match the column name in your CSV
+
+model:
+  type: "random_forest"
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 2
+  min_samples_leaf: 1
+  random_state: 42
+
+training:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+
+metrics:
+  primary: "accuracy"
+  additional:
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+
+thresholds:
+  min_accuracy: 0.75
+  min_f1: 0.70
+
+paths:
+  models: "models/"
+  reports: "reports/"
+  logs: "logs/"

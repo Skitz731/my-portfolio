@@ -1,0 +1,9 @@
+data:
+  raw_path: "data/raw/employee_attrition.csv"
+  processed_path: "data/processed/"
+  target_column: "Attrition"
+
+training:
+  test_size: 0.2
+  validation_size: 0.2
+  random_state: 42

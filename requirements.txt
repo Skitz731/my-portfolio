@@ -3,3 +3,7 @@ numpy
 scikit-learn
 mlflow
 matplotlib
+streamlit
+python-dotenv
+openai
+joblib

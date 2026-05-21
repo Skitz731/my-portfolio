@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# DVC
+.dvc/cache
+.dvc/tmp
+.dvc/plots
+.dvc/.gitignore
+
+# MLflow
+mlruns/
+.mlflow/
+mlflow_artifacts/
+
+# Data (DVC-managed)
+data/raw/
+data/processed/
+data/interim/
+*.csv
+*.parquet
+*.pkl
+*.joblib
+
+# Models and artifacts
+models/
+checkpoints/
+*.h5
+*.onnx
+
+# Reports
+reports/*.html
+reports/*.png
+reports/*.jpg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
