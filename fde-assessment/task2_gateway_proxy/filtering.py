@@ -1,14 +1,14 @@
 import logging
 import sys
-from typing import Any
+from typing import Optional, Any
 
 try:
-    import httpx
-except Exception:  # pragma: no cover - fallback for environments without httpx
-    class _RequestError(Exception):
+    import httpx  # type: ignore
+except (ImportError, ModuleNotFoundError):  # pragma: no cover - fallback for environments without httpx
+    class RequestError(Exception):
         pass
 
-    class _StubResponse:
+    class Response:
         def __init__(self):
             self.status_code = 502
 
@@ -17,33 +17,45 @@ except Exception:  # pragma: no cover - fallback for environments without httpx
                     "error": {"code": -32000, "message": "Upstream MCP server unavailable"}}
 
     class AsyncClient:
-        def __init__(self, *args, **kwargs):
+        def __init__(self, *_args, **_kwargs):
             pass
 
         async def __aenter__(self):
             return self
 
-        async def __aexit__(self, exc_type, exc, tb):
+        async def __aexit__(self, _exc_type, _exc, _tb):
             return False
 
-        async def post(self, *args, **kwargs):
-            raise _RequestError("httpx not installed")
+        async def post(self, *_args, **_kwargs):
+            raise RequestError("httpx not installed")
 
     # emulate the httpx namespace minimally
     class _httpx:
-        RequestError = _RequestError
+        RequestError = RequestError
         AsyncClient = AsyncClient
+        Response = Response
 
     httpx = _httpx
 
 try:
-    from fastapi import FastAPI, Request
-    from fastapi.responses import JSONResponse
-except Exception:  # pragma: no cover - fallback for environments without fastapi
+    from fastapi import FastAPI, Request  # type: ignore
+    from fastapi.responses import JSONResponse  # type: ignore
+except ImportError:  # pragma: no cover - fallback for environments without fastapi
     # Minimal stubs so the module can be imported and tested without FastAPI
+    class FastAPI:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def post(self, *args, **kwargs):
+            def decorator(func):
+                return func
+
+            return decorator
+
     class Request:  # very small subset used in this module
         def __init__(self, scope=None, receive=None):
             self._json = None
+            self.headers = {}
 
         async def json(self):
             return self._json or {}
@@ -72,7 +84,7 @@ TOKEN_STORE = {
 HOP_BY_HOP = {"connection", "keep-alive", "transfer-encoding", "upgrade", "te"}
 
 
-def resolve_role(bearer_token: str | None) -> str | None:
+def resolve_role(bearer_token: Optional[str]) -> Optional[str]:
     """Demo token scheme '<role>:<secret>'. Swap for JWT verification in prod."""
     if not bearer_token:
         return None
@@ -89,7 +101,7 @@ def rpc_error(req_id, code: int, message: str) -> dict:
             "error": {"code": code, "message": message}}
 
 
-def safe_json(resp: httpx.Response) -> Any:
+def safe_json(resp: Any) -> Any:
     try:
         return resp.json()
     except Exception:
