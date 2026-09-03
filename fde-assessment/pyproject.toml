@@ -19,7 +19,7 @@ task1-server     = "task1_mcp_server.server:main"
 task2-downstream = "task2_gateway_proxy.downstream_mock:serve"
 task2-gateway    = "task2_gateway_proxy.gateway:serve"
 task3-gateway    = "task3_stream_guardrail.gateway:serve"
-task4-gateway    "task4_model_router.router:serve"   
+task4-gateway   = "task4_model_router.router:serve"   
 
 [build-system]
 requires = ["setuptools>=68"]
