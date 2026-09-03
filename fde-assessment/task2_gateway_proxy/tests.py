@@ -1,10 +1,26 @@
 # task2_gateway_proxy/test_gateway.py
+import os
+import sys
 import threading
 import time
 
 import httpx
-import pytest
+# pyright: reportMissingImports=false
+try:
+    import pytest  # type: ignore[reportMissingImports]
+except Exception:  # pragma: no cover - fallback for environments without pytest installed
+    class _PytestFallback:
+        def fixture(self, *args, **kwargs):
+            def _decorator(f):
+                return f
+            return _decorator
+
+    pytest = _PytestFallback()
 import uvicorn
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 from task2_gateway_proxy.gateway import app as gateway_app
 from task2_gateway_proxy.downstream_mock import app as mock_app
@@ -20,7 +36,6 @@ def downstream():
     thread = threading.Thread(target=server.run, daemon=True)
     thread.start()
     # wait for readiness
-    import time
     for _ in range(50):
         try:
             httpx.get("http://127.0.0.1:9000/docs")
@@ -33,7 +48,7 @@ def downstream():
 
 
 def client():
-    return httpx.Client(transport=httpx.ASGITransport(app=gateway), base_url="http://gw")
+    return httpx.Client(transport=httpx.ASGITransport(app=gateway_app), base_url="http://gw")
 
 
 def rpc(method, params=None, req_id=1):

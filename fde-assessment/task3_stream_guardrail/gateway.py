@@ -13,32 +13,80 @@ import logging
 import os
 import sys
 from typing import AsyncIterator
+from typing import AsyncIterable
 
 try:
     # fastapi imports
-    from fastapi import FastAPI, Request
-    from fastapi.responses import StreamingResponse
+    from fastapi import FastAPI, Request, StreamingResponse  # type: ignore[import-not-found]
 except Exception as e:  # pragma: no cover - helpful error when deps missing
     raise RuntimeError(
         "fastapi is required to run this gateway. Install it with: pip install fastapi\n"
         f"Original error: {e}"
     )
 
+# FastAPI symbols are imported above for runtime.
+
 try:
-    import httpx
-except Exception as e:  # pragma: no cover - helpful error when deps missing
+    import httpx  # type: ignore[import-not-found]
+except ImportError as e:  # pragma: no cover - helpful error when deps missing
     raise RuntimeError(
         "httpx is required to run this gateway. Install it with: pip install httpx\n"
         f"Original error: {e}"
     )
 
-from pii_redactor import StreamingPiiRedactor
+from pii_redactor import StreamingPiiRedactor  # type: ignore[import-not-found]
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("llm-gateway")
 
 UPSTREAM_URL = os.environ.get("LLM_UPSTREAM_URL", "http://127.0.0.1:9001/v1/chat/completions")
 app = FastAPI(title="LLM Gateway — streaming PII guardrail")
+
+
+def _error_frame(message: str, status: int = 500) -> bytes:
+    """Return a simple SSE error/data frame as bytes."""
+    payload = {"error": message, "status": status}
+    return ("data: " + json.dumps(payload) + "\n\n").encode()
+
+
+def _delta_frame(delta: str) -> bytes:
+    """Return a minimal SSE frame with a delta in the choices[0].delta.content field."""
+    event = {"choices": [{"delta": {"content": delta}}]}
+    return ("data: " + json.dumps(event) + "\n\n").encode()
+
+
+def _delta_frame_with(delta: str, event: dict) -> bytes:
+    """Return an SSE frame with delta merged into the provided event."""
+    if "choices" in event and len(event["choices"]) > 0:
+        if "delta" not in event["choices"][0]:
+            event["choices"][0]["delta"] = {}
+        event["choices"][0]["delta"]["content"] = delta
+    return ("data: " + json.dumps(event) + "\n\n").encode()
+
+
+def _extract_delta(event: dict) -> str:
+    """Extract the delta content from an OpenAI-compatible event."""
+    try:
+        return event.get("choices", [{}])[0].get("delta", {}).get("content", "")
+    except (KeyError, IndexError, TypeError):
+        return ""
+
+
+async def _sse_lines(byte_stream: AsyncIterable[bytes]) -> AsyncIterator[str]:
+    """Decode SSE lines from a byte stream, handling partial frames."""
+    buffer = ""
+    async for chunk in byte_stream:
+        buffer += chunk.decode("utf-8", errors="replace")
+        while "\n\n" in buffer:
+            line, buffer = buffer.split("\n\n", 1)
+            if line:
+                yield line
+
+
+async def relay_and_log(source: AsyncIterator[bytes]) -> AsyncIterator[bytes]:
+    """Pass through bytes from source, logging for debugging."""
+    async for chunk in source:
+        yield chunk
 
 
 @app.post("/v1/chat/completions")
@@ -62,7 +110,7 @@ async def chat_completions(request: Request):
                         tail = redactor.flush()
                         if tail:
                             yield _delta_frame(tail)
-                        yield "data: [DONE]\n\n"
+                        yield b"data: [DONE]\n\n"
                         return
                     try:
                         event = json.loads(data)

@@ -6,14 +6,22 @@ standardized sanitized error payloads (no upstream stack traces leak).
 
 import asyncio
 import logging
+import os
 import sqlite3
-import time
+import sys
 import uuid
 from pathlib import Path
 
-import httpx
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+try:
+    import httpx  # type: ignore[import-not-found]
+except ImportError as e:
+    raise ImportError("httpx is required. Install it with: pip install httpx") from e
+
+try:
+    from fastapi import FastAPI, Request  # type: ignore[import-not-found]
+    from fastapi.responses import JSONResponse  # type: ignore[import-not-found]
+except ImportError as e:
+    raise ImportError("fastapi is required. Install it with: pip install fastapi") from e
 
 from limiter import (RateLimitExceeded, SqliteTokenWindow,
                      estimate_request_tokens)
@@ -30,10 +38,7 @@ app = FastAPI(title="LLM Gateway — Rate Limiting & Failover Router")
 
 limiter = SqliteTokenWindow(DB_PATH)
 
-import sys  # noqa: E402  (kept near usage for clarity)
-
 # Provider endpoints — mock-friendly via env override in tests.
-import os
 PRIMARY_URL = os.environ.get("PRIMARY_URL", "http://127.0.0.1:9101/v1/completions")
 SECONDARY_URL = os.environ.get("SECONDARY_URL", "http://127.0.0.1:9102/v1/completions")
 
@@ -56,7 +61,7 @@ def gateway_error(req_id: str, code: str, message: str, status: int) -> JSONResp
     )
 
 
-async def call_provider(url: str, body: dict, req_id: str) -> tuple[int, dict | None, str | None]:
+async def call_provider(url: str, body: dict) -> tuple[int, dict | None, str | None]:
     """
     Returns (status_code, parsed_json_or_None, sanitized_failure_or_None).
     Raises nothing — all failure modes are converted into the tuple so the
@@ -111,12 +116,12 @@ async def completions(request: Request) -> JSONResponse:
         return gateway_error(req_id, "internal_error", "Admission control unavailable", 503)
 
     # ---------------- routing: primary, then failover -----------------------
-    status, data, failure = await call_provider(PRIMARY_URL, body, req_id)
+    status, data, failure = await call_provider(PRIMARY_URL, body)
     used_fallback = False
 
     if failure is not None or status >= 500 or status == 429:
         log.warning("[%s] primary failed (%s) — failing over", req_id, failure or status)
-        status2, data2, failure2 = await call_provider(SECONDARY_URL, body, req_id)
+        status2, data2, failure2 = await call_provider(SECONDARY_URL, body)
         used_fallback = True
         if failure2 is not None or status2 >= 400:
             # Both legs failed: sanitized, no upstream internals exposed.
@@ -145,23 +150,3 @@ async def cleanup() -> None:
     # WAL checkpoint so the on-disk db is clean for inspection after test runs.
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-@pytest.fixture
-def router_env():
-    sys.path.insert(0, str(Path(__file__).parent))
-    import router
-
-    def setup(primary: FastAPI, secondary: FastAPI):
-        dispatch = _AsgiDispatch(primary, secondary)
-        original = httpx.AsyncClient.__init__
-        def patched(self, *a, **kw):
-            kw.pop("timeout", None)
-            kw["transport"] = dispatch
-            original(self, *a, **kw)
-        httpx.AsyncClient.__init__ = patched
-        try:
-            return router.app, primary, secondary
-        finally:
-            httpx.AsyncClient.__init__ = original
-        # note: restore must happen at fixture teardown, not here — see below
-
-    yield setup
